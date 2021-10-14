@@ -1,17 +1,30 @@
 <!--
  * @Date         : 2021-10-11 09:24:30
  * @LastEditors  : HaoJie
- * @LastEditTime : 2021-10-14 14:33:06
+ * @LastEditTime : 2021-10-14 14:45:19
  * @FilePath     : \src\App.vue
 -->
 <script lang="ts">
 // console.log(import.meta.env)
 
 import HelloWorld from "./components/HelloWorld.vue";
-
+import { onMounted, onUpdated, onUnmounted, getCurrentInstance } from "vue";
 export default {
   name: "APP",
-  components: { HelloWorld }
+  components: { HelloWorld },
+  setup() {
+    const { proxy } = getCurrentInstance();
+    proxy.$axios
+      .post("/api/URL/GETLIST", {
+        params: {}
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 };
 </script>
 
