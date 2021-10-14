@@ -1,20 +1,26 @@
 <!--
  * @Date         : 2021-10-11 09:24:30
  * @LastEditors  : HaoJie
- * @LastEditTime : 2021-10-11 15:13:01
+ * @LastEditTime : 2021-10-14 14:33:06
  * @FilePath     : \src\App.vue
 -->
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+<script lang="ts">
+// console.log(import.meta.env)
+
 import HelloWorld from "./components/HelloWorld.vue";
+
+export default {
+  name: "APP",
+  components: { HelloWorld }
+};
 </script>
 
-<template>
-  <div>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  </div>
+<template lang="pug">
+div
+  img(alt="Vue logo" src="./assets/logo.png")
+  //- HelloWorld(msg="我觉得行")
+  el-button I am ElButton
+  router-view
 </template>
 
 <style lang="stylus">

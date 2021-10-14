@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "useDefineForClassFields": true,
+    // "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -19,6 +19,10 @@
         "./src/*"
       ]
     },
+    "types": [
+      "vite/client",
+      "element-plus/global"
+    ]
   },
   "include": [
     "src/**/*.ts",

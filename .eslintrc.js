@@ -1,10 +1,11 @@
 /*
  * @Date         : 2021-10-11 10:01:20
  * @LastEditors  : HaoJie
- * @LastEditTime : 2021-10-11 15:56:03
+ * @LastEditTime : 2021-10-14 11:17:26
  * @FilePath     : \.eslintrc.js
  */
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -25,6 +26,7 @@ module.exports = {
   },
   rules: {
     "import/no-extraneous-dependencies": "off",
-    "vue/script-setup-uses-vars": "error"
+    "vue/script-setup-uses-vars": "error",
+    "no-param-reassign": ["error", { props: true, ignorePropertyModificationsFor: ["state"] }]
   }
 };
